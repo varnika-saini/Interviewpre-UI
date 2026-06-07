@@ -70,7 +70,8 @@ export function QuestionDetail({ question }: { question: Question }) {
   const [runState, setRunState] = React.useState<RunState>("idle");
   const [revealedHints, setRevealedHints] = React.useState(0);
 
-  function onLanguageChange(lang: string) {
+  function onLanguageChange(lang: string | null) {
+    if (!lang) return;
     setLanguage(lang);
     setCode(codeFor(lang));
     setRunState("idle");

@@ -110,7 +110,7 @@ export default function QuestionsPage() {
               ))}
             </div>
 
-            <Select value={category} onValueChange={setCategory}>
+            <Select value={category} onValueChange={(v) => setCategory(v ?? "All")}>
               <SelectTrigger className="h-9 w-44">
                 <SlidersHorizontal className="size-3.5 text-muted-foreground" />
                 <SelectValue placeholder="Category" />

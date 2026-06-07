@@ -49,7 +49,7 @@ export function QuizAttempt({ quiz }: { quiz: Quiz }) {
     });
   };
 
-  const score = answers.reduce(
+  const score = answers.reduce<number>(
     (acc, a, i) => (a === quiz.questions[i].correctIndex ? acc + 1 : acc),
     0
   );
